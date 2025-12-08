@@ -1,0 +1,12 @@
+module.exports = {
+  root: true,
+  env: { browser: true, es2020: true },
+  extends: ['eslint:recommended', '@typescript-eslint/recommended', 'prettier'],
+  parser: '@typescript-eslint/parser',
+  plugins: ['@typescript-eslint', 'prettier'],
+  rules: {
+    'prettier/prettier': 'error',
+    '@typescript-eslint/no-unused-vars': 'warn',
+  },
+  ignorePatterns: ['dist', '.eslintrc.cjs'],
+};
