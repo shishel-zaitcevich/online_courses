@@ -1,0 +1,66 @@
+@use './variables' as *;
+@use './fonts' as *;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: $font-primary;
+  color: $color-text-primary;
+  background: #fafafa;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: clamp(20px, 3vw, 40px);
+  padding-bottom: 86px;
+  min-height: 100vh;
+}
+
+#app {
+  min-height: 100%;
+}
+
+.page {
+  max-width: 1230px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 32px;
+
+  &__title {
+    font-weight: 900;
+    font-size: clamp(20px, 3.6vw, 46px);
+    line-height: 130%;
+    color: $color-text-primary;
+    margin: 0;
+    margin-top: 9px;
+  }
+
+  &__subtitle {
+    font-size: 16px;
+    color: $color-text-tertiary;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 150%;
+    font-weight: 700;
+    margin-top: 4px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

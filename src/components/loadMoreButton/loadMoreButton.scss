@@ -1,0 +1,53 @@
+@use '../../styles/variables' as *;
+
+.load-more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(8px, 1.2vw, 16px);
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto;
+  background: transparent;
+  border: none;
+
+  cursor: pointer;
+
+  &:hover {
+    .load-more__icon {
+      animation: spin 1s linear infinite;
+    }
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  &__icon {
+    width: clamp(16px, 1.5vw, 20px);
+    height: clamp(16px, 1.5vw, 20px);
+    transition: transform 0.3s ease;
+  }
+
+  &--hidden {
+    display: none;
+  }
+
+  &__text {
+    font-size: clamp(14px, 1.3vw, 16px);
+    color: $color-dark;
+    font-family: 'Lato-Bold';
+    line-height: 160%;
+    font-weight: 700;
+    padding-top: 2px;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

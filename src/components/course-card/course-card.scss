@@ -1,0 +1,112 @@
+@use '../../styles/variables' as *;
+
+.course-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: $color-white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: $shadow-card;
+  transition: all 0.3s ease;
+  animation: fadeIn 0.5s ease forwards;
+  max-width: 390px;
+  width: 100%;
+  padding-bottom: 22px;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow:
+      0px 8px 8px -4px rgba(30, 33, 44, 0.05),
+      0px 20px 16px -6px rgba(154, 156, 165, 0.08),
+      0px 40px 32px -10px rgba(154, 156, 165, 0.1),
+      0px 100px 100px -20px rgba(154, 156, 165, 0.15);
+  }
+
+  &__image {
+    position: relative;
+    width: 100%;
+    min-height: clamp(180px, 30vw, 240px);
+    background: linear-gradient(135deg, #ffd166 0%, #f5b800 100%);
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center bottom;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding: 1px 24px;
+  }
+
+  &__badge {
+    align-self: flex-start;
+    padding: clamp(4px, 0.6vw, 1px) clamp(8px, 1.5vw, 8px);
+    font-size: clamp(11px, 1vw, 14px);
+    font-family: 'Lato-Regular';
+    letter-spacing: 0.7px;
+    font-weight: 400;
+    color: $color-white;
+    border-radius: 4px;
+
+    &--marketing {
+      background: $color-primary;
+    }
+    &--management {
+      background: $color-secondary;
+    }
+    &--hr {
+      background: $color-orange;
+    }
+    &--design {
+      background: $color-pink;
+    }
+    &--development {
+      background: $color-purple;
+    }
+  }
+
+  &__title {
+    font-size: clamp(18px, 2.2vw, 20px);
+    font-family: 'Lato Bold';
+    font-weight: 700;
+    line-height: 150%;
+    color: $color-text-primary;
+    flex: 1;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    gap: clamp(6px, 1.5vw, 8px);
+  }
+
+  &__price {
+    font-size: clamp(14px, 2.2vw, 18px);
+    font-weight: 900;
+    color: $color-accent;
+    font-family: 'Lato Bold';
+  }
+
+  &__divider {
+    flex-shrink: 0;
+    width: 1px;
+    height: 1em;
+    background: currentColor;
+    opacity: 0.3;
+    margin-top: 2px;
+  }
+
+  &__author {
+    font-size: clamp(13px, 1.2vw, 18px);
+    font-family: 'Lato Regular';
+    color: $color-text-tertiary;
+    line-height: 150%;
+    font-weight: 300;
+  }
+}

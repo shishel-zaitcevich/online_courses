@@ -1,0 +1,41 @@
+$color-primary: #03cea4;
+$color-secondary: #5a87fc;
+$color-orange: #f89828;
+$color-pink: #f52f6e;
+$color-purple: #7772f1;
+$color-red: #ff4242;
+$color-text-primary: #1e212c;
+$color-text-secondary: #787a80;
+$color-text-tertiary: #9a9ca5;
+$color-border: #d7dadd;
+$color-white: #ffffff;
+$color-dark: #424551;
+$color-accent: #ff3f3a;
+
+$font-primary: 'Lato', sans-serif;
+
+$shadow-card:
+  0px 4px 4px -4px rgba(30, 33, 44, 0.03),
+  0px 12px 10px -6px rgba(154, 156, 165, 0.04),
+  0px 30px 24px -10px rgba(154, 156, 165, 0.05),
+  0px 80px 80px -20px rgba(154, 156, 165, 0.08);
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == 'mobile' {
+    @media (max-width: 767px) {
+      @content;
+    }
+  }
+  @if $breakpoint == 'tablet' {
+    @media (max-width: 1199px) {
+      @content;
+    }
+  }
+}
+
+@mixin fluid-font($min-size, $max-size, $min-width: 320, $max-width: 1920) {
+  font-size: calc(
+    #{$min-size}px + (#{$max-size} - #{$min-size}) *
+      ((100vw - #{$min-width}px) / (#{$max-width} - #{$min-width}))
+  );
+}
