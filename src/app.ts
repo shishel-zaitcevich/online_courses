@@ -44,11 +44,7 @@ const searchBox = createSearchBox((query) => {
 const grid = createCourseGrid(coursesData);
 
 const topBar = document.createElement('div');
-topBar.style.display = 'flex';
-topBar.style.alignItems = 'center';
-topBar.style.gap = '12px';
-topBar.style.marginTop = '83px';
-topBar.style.marginBottom = '60px';
+topBar.className = 'top-bar';
 topBar.appendChild(categoryTabs);
 topBar.appendChild(searchBox.node);
 root.appendChild(topBar);

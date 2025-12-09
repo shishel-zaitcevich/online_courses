@@ -2,32 +2,24 @@
 
 .course-grid {
   width: 100%;
-  display: grid;
+  display: block;
 
   &__list {
-    display: grid;
-    grid-template-columns: repeat(
-      auto-fit,
-      minmax(
-        // Минимальная ширина карточки — от 280px до 390px
-        clamp(280px, 30vw, 390px),
-        1fr
-      )
-    );
+    display: flex;
+    flex-wrap: wrap;
     gap: 30px;
-    margin-bottom: clamp(40px, 8vw, 80px);
+    justify-content: center;
     max-width: 1230px;
-    margin-left: auto;
-    margin-right: auto;
-    justify-items: center;
-    justify-content: start;
+    margin: 0 auto clamp(40px, 8vw, 80px);
+
+    & > * {
+      min-width: 280px;
+      max-width: 390px;
+      transition: transform 0.4s ease;
+    }
 
     &:has(> :only-child) {
       justify-content: center;
-    }
-
-    & > * {
-      transition: transform 0.4s ease;
     }
   }
 }
