@@ -1,36 +1,21 @@
 @use '../../styles/variables' as *;
 
-// Контейнер для всех декораций
 .decorations {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none; // Декорации не должны блокировать клики
+  pointer-events: none;
   z-index: 0;
   overflow: hidden;
 }
 
-// Общие стили для декоративных элементов
 .decorations__item {
   position: absolute;
   pointer-events: none;
   opacity: 0.6;
   transition: opacity 0.3s ease;
-
-  @media (max-width: 1024px) {
-    opacity: 0.4; // Менее заметные на планшетах
-  }
-
-  @media (max-width: 768px) {
-    opacity: 0.3; // Еще менее заметные на мобилках
-  }
-
-  // Скрываем на очень маленьких экранах
-  @media (max-width: 480px) {
-    opacity: 0.2;
-  }
 }
 
 .decorations__img {
@@ -61,34 +46,4 @@
   right: 3%;
   width: clamp(60px, 20vw, 85px);
   height: clamp(60px, 20vw, 85px);
-}
-
-@keyframes floatTopRight {
-  0%,
-  100% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(-10px, 10px);
-  }
-}
-
-@keyframes floatLeft {
-  0%,
-  100% {
-    transform: translateY(-50%) translateX(0);
-  }
-  50% {
-    transform: translateY(-50%) translateX(10px);
-  }
-}
-
-@keyframes floatBottomRight {
-  0%,
-  100% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(-15px, -10px);
-  }
 }

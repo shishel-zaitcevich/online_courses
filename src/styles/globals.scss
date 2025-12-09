@@ -16,18 +16,19 @@ body {
   background: #fafafa;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding: clamp(20px, 3vw, 40px);
-  padding-bottom: 86px;
+  padding-bottom: clamp(20px, 3vw, 86px);
   min-height: 100vh;
 }
 
 #app {
   min-height: 100%;
+  width: 100vw;
 }
 
 .page {
-  max-width: 1230px;
+  max-width: min(1310px, 100vw);
   margin: 0 auto;
+  padding: clamp(10px, 3vw, 40px);
 }
 
 .header {
@@ -62,5 +63,24 @@ body {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(12px, 2vw, 20px);
+  margin-top: clamp(40px, 6vw + 40px, 83px);
+  margin-bottom: clamp(30px, 4vw + 20px, 60px);
+
+  flex-wrap: wrap;
+
+  > *:last-child {
+    min-width: min(100%, 300px);
+
+    &.search {
+      margin-left: 0;
+    }
   }
 }
